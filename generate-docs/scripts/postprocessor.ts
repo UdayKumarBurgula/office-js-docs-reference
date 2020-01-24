@@ -179,8 +179,7 @@ function fixToc(tocPath: string, commonToc: Toc, hostName: string, versionNumber
         "name": "API reference overview",
         "href": "overview.md"
     }] as any;
-    
-    
+
     let generalFilter: string[] = ["Interfaces"]
     let enumFilter: string[];
     if (hostName === "outlook") {
@@ -214,10 +213,8 @@ function fixToc(tocPath: string, commonToc: Toc, hostName: string, versionNumber
             }
 
             // get items in the namespace for the new TOC
-            packageItem.items.forEach((namespaceItem, namespaceIndex) => {
-                membersToMove.items = namespaceItem.items;
-            });
-            
+            membersToMove.items = packageItem.items;
+
             if (packageName.toLocaleLowerCase().includes('office runtime')) {
                 customFunctionsRoot.items.push({
                     "name": packageName,
@@ -260,14 +257,14 @@ function fixToc(tocPath: string, commonToc: Toc, hostName: string, versionNumber
                     });
 
                     if (enumList) {
-                        let enumRoot
-                        if (hostName === "outlook") {
-                            enumRoot = membersToMove.items.find(item => {
-                                return item.name === "MailboxEnums";
-                            });
-                        } else {
+                        let enumRoot;
+                        // if (hostName === "outlook") {
+                        //     enumRoot = membersToMove.items.find(item => {
+                        //         return item.name === "MailboxEnums";
+                        //     });
+                        // } else {
                             enumRoot = {"name": "Enums", "uid": "", "items": enumList};
-                        }
+                        //}
                         primaryList.unshift(enumRoot);
                     }
                 }

@@ -18,14 +18,18 @@ items:
 
 
       - [MessageCompose](xref:outlook!Office.MessageCompose:interface)
-    name: Office.ItemCompose
+    name: ItemCompose
     fullName: Office.ItemCompose
     langs:
       - typeScript
+    namespace: 'outlook!Office:namespace'
     type: interface
     extends:
       - 'outlook!Office.Item:interface'
+    inheritance:
+      - type: 'outlook!Office.Item:interface'
     package: outlook!
 references:
   - uid: 'outlook!Office.Item:interface'
     name: Item
+    fullName: Office.Item

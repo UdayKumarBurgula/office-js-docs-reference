@@ -5,10 +5,11 @@ items:
       Represents the entity that is mentioned in comments.
 
       \[ [API set: ExcelApiOnline 1.1](/office/dev/add-ins/reference/requirement-sets/excel-api-requirement-sets) \]
-    name: Excel.CommentMention
+    name: CommentMention
     fullName: Excel.CommentMention
     langs:
       - typeScript
+    namespace: 'excel!Excel:namespace'
     type: interface
     package: excel!
     children:
